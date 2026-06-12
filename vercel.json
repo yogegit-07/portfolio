@@ -1,5 +1,4 @@
 {
-  "cleanUrls": true,
   "headers": [
     {
       "source": "/Yogesh_C_Resume.docx",
@@ -11,6 +10,10 @@
         {
           "key": "Content-Disposition",
           "value": "attachment; filename=Yogesh_C_Resume.docx"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
         }
       ]
     }
