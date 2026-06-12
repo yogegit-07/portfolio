@@ -1,12 +1,3 @@
-// RESUME DOCX DOWNLOAD HANDLER
-function handleDownloadResume() {
-    const link = document.createElement('a');
-    link.href = './Yogesh_C_Resume.docx?v=' + new Date().getTime();
-    link.download = 'Yogesh_C_Resume.docx';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
 
 // TRANSMISSION PACKET SUBMISSION ROUTINE
 function handleSubmit(){
