@@ -467,63 +467,9 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
 <script>
 // ── RESUME DOWNLOAD ──
 function handleDownloadResume() {
-  const resumeContent = `===================================================================
-YOGESH C
-Python Developer (Fresher) | AWS re/Start | SQL Basics
-Contact: c.yogesh0007@gmail.com | +91 93457 68245
-Location: Palamedu, Madurai, Tamil Nadu
-Profiles: linkedin.com/in/yogesh-c-687559305 | github.com/yogegit-07
-===================================================================
-
-SUMMARY
-Motivated Python Developer (Fresher) with hands-on internship experience and a strong
-foundation in Python, AWS cloud services, and SQL. Developed a real-world AI-powered
-web application and eager to contribute to innovative teams.
-
-INTERNSHIP EXPERIENCE
----------------------
-Python Developer Intern | Phoenix Softech
-Duration: 15 July 2025 - 31 July 2025 | Madurai, TN
-* Developed Python-based automation scripts to streamline internal workflows.
-* Handled data preprocessing and analysis using Pandas and NumPy.
-* Built and tested Python modules for data processing and backend logic integration.
-* Collaborated with the team writing clean, reusable Python code following best practices.
-
-PROJECTS
---------
-ShopAI - AI-Powered Smart Shopping Assistant
-Technologies: React.js, TypeScript, Tailwind CSS, Vite, Google Gemini AI API, PostgreSQL, Edge Functions
-* Built a React-based web application with a conversational AI interface.
-* Integrated Google Gemini AI for personalised, context-aware product recommendations.
-* Implemented voice search using the Web Speech Recognition API.
-* Developed a complete order management lifecycle (UPI, Card, COD, tracking, wishlist).
-* Cloud-based PostgreSQL backend with Row Level Security.
-
-TECHNICAL SKILLS
-----------------
-Cloud: AWS re/Start (S3, EC2, IAM, VPC, CloudWatch)
-Programming: Python, JavaScript, TypeScript
-Web & Frontend: React.js, Tailwind CSS, HTML, CSS, Vite
-Database: SQL, PostgreSQL, MySQL
-Libraries: Pandas, NumPy, Git, GitHub, VS Code, Linux
-AI/APIs: Google Gemini AI API, Web Speech Recognition API, REST APIs
-
-EDUCATION
----------
-B.E. Computer Science Engineering — PTR College of Engineering and Technology | CGPA: 7.55
-HSC — Govt Model Hr Sec School | 59.50% | 2022
-SSLC — Govt Model Hr Sec School | 52.20% | 2020
-
-CERTIFICATIONS
---------------
-AWS re/Start — Amazon Web Services (Validated)
-Python Development — Phoenix Softech (Certified, July 2025)
-MS Office — Naan Mudhalvan (Certified, 2024)
-`;
-  const blob = new Blob([resumeContent], { type: 'text/plain' });
   const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = 'Yogesh_C_Resume.txt';
+  link.href = './Yogesh_C_Resume.docx';
+  link.download = 'Yogesh_C_Resume.docx';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
