@@ -70,4 +70,4 @@ document.querySelectorAll('.tree-item').forEach(link => {
         });
     }
     setInterval(stepMatrix, 50);
-})();
+})();// Force rebuild - Fri Jun 12 16:28:39 UTC 2026
