@@ -467,12 +467,7 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
 <script>
 // ── RESUME DOWNLOAD ──
 function handleDownloadResume() {
-  const link = document.createElement('a');
-  link.href = './Yogesh_C_Resume.docx';
-  link.download = 'Yogesh_C_Resume.docx';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  window.open('https://raw.githubusercontent.com/yogegit-07/portfolio/main/Yogesh_C_Resume.docx', '_blank');
 }
 
 // ── CONTACT FORM ──
