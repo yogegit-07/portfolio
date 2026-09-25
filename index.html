@@ -7,7 +7,7 @@
 <meta name="description" content="Portfolio of Yogesh C, a Python developer and business development professional focused on backend systems, AWS cloud automation, and client growth.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -26,8 +26,8 @@ body.light-mode .hero-headline strong,body.light-mode .project-name,body.light-m
 body.light-mode .form-wrap,body.light-mode .form-input{background:rgba(255,255,255,0.52)}
 
 button,.btn-primary,.btn-ghost,.resume-dl-btn,.form-submit,.proj-link{will-change:transform}
-.icon{width:16px;height:16px;stroke-width:1.8;flex:0 0 auto}
-.icon-lg{width:20px;height:20px;stroke-width:1.7}
+.icon{font-size:16px;line-height:1;flex:0 0 auto}
+.icon-lg{font-size:20px;line-height:1}
 .nav-link:hover,.nav-github:hover,.tagline,.hero-name .last,.scroll-line,.sec-label,.project-number,.project-subtitle,.edu-year,.contact-icon,.cli-icon{color:var(--accent)}
 .contact-icon,.cli-icon{border-color:var(--accent-soft)}
 .theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:0.5px solid var(--glass-border);border-radius:50%;background:var(--glass);color:var(--accent);cursor:pointer;transition:transform .25s,background .25s,border-color .25s}
@@ -219,10 +219,10 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
       <a class="nav-link" href="#experience">Experience</a>
       <a class="nav-link" href="#projects">Projects</a>
       <a class="nav-link" href="#contact">Contact</a>
-      <a class="nav-github" href="https://github.com/yogegit-07" target="_blank" rel="noopener noreferrer"><i data-lucide="github" class="icon"></i> GitHub</a>
+      <a class="nav-github" href="https://github.com/yogegit-07" target="_blank" rel="noopener noreferrer"><i class="ph ph-github-logo icon"></i> GitHub</a>
       <a class="nav-link" href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer">Portfolio</a>
     </div>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme" title="Toggle color theme"><i data-lucide="sun" class="icon"></i></button>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme" title="Toggle color theme"><i class="ph ph-sun icon"></i></button>
   </nav>
 
   <div class="hero-content">
@@ -241,10 +241,10 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
       <div class="stack-item"><div class="stack-dot green"></div>AWS Cloud · React.js</div>
     </div>
     <div class="hero-cta">
-      <a class="btn-primary" href="mailto:c.yogesh0007@gmail.com"><i data-lucide="mail" class="icon"></i> Hire Me</a>
-      <a class="btn-ghost" href="https://github.com/yogegit-07" target="_blank" rel="noopener noreferrer"><i data-lucide="github" class="icon"></i> GitHub</a>
-      <a class="btn-ghost" href="https://www.linkedin.com/in/yogesh-c-687559305/" target="_blank" rel="noopener noreferrer"><i data-lucide="linkedin" class="icon"></i> LinkedIn</a>
-      <a class="btn-ghost" href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link" class="icon"></i> Portfolio</a>
+      <a class="btn-primary" href="mailto:c.yogesh0007@gmail.com" aria-label="Hire Me" onclick="handleHireMe(event)"><i class="ph ph-envelope icon"></i> Hire Me</a>
+      <a class="btn-ghost" href="https://github.com/yogegit-07" target="_blank" rel="noopener noreferrer"><i class="ph ph-github-logo icon"></i> GitHub</a>
+      <a class="btn-ghost" href="https://www.linkedin.com/in/yogesh-c-687559305/" target="_blank" rel="noopener noreferrer"><i class="ph ph-linkedin-logo icon"></i> LinkedIn</a>
+      <a class="btn-ghost" href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer"><i class="ph ph-arrow-square-out icon"></i> Portfolio</a>
     </div>
   </div>
 
@@ -266,12 +266,12 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
       <p class="about-text">With hands-on experience integrating Google Gemini AI, React.js frontends, and PostgreSQL backends, I bridge the gap between clean interfaces and robust server-side logic.</p>
       <p class="about-text">Alongside my technical work, I currently support business development at ChainSys through lead generation, market research, client outreach, and CRM management.</p>
       <div class="about-contact">
-        <div class="contact-row"><div class="contact-icon"><i data-lucide="mail" class="icon"></i></div>c.yogesh0007@gmail.com</div>
-        <div class="contact-row"><div class="contact-icon"><i data-lucide="phone" class="icon"></i></div>+91 93457 68245</div>
-        <div class="contact-row"><div class="contact-icon"><i data-lucide="map-pin" class="icon"></i></div>Palamedu, Madurai, Tamil Nadu</div>
-        <div class="contact-row"><div class="contact-icon"><i data-lucide="linkedin" class="icon"></i></div><a href="https://www.linkedin.com/in/yogesh-c-687559305/" target="_blank" rel="noopener noreferrer" style="color:rgba(74,144,217,0.8);text-decoration:none">linkedin.com/in/yogesh-c-687559305</a></div>
-        <div class="contact-row"><div class="contact-icon"><i data-lucide="github" class="icon"></i></div><a href="https://github.com/yogegit-07" target="_blank" rel="noopener noreferrer" style="color:rgba(232,184,75,0.8);text-decoration:none">github.com/yogegit-07</a></div>
-        <div class="contact-row"><div class="contact-icon"><i data-lucide="external-link" class="icon"></i></div><a href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" style="color:rgba(93,202,165,0.8);text-decoration:none">portfolio-yogegit-07s-projects.vercel.app</a></div>
+        <div class="contact-row"><div class="contact-icon"><i class="ph ph-envelope icon"></i></div>c.yogesh0007@gmail.com</div>
+        <div class="contact-row"><div class="contact-icon"><i class="ph ph-phone icon"></i></div>+91 93457 68245</div>
+        <div class="contact-row"><div class="contact-icon"><i class="ph ph-map-pin icon"></i></div>Palamedu, Madurai, Tamil Nadu</div>
+        <div class="contact-row"><div class="contact-icon"><i class="ph ph-linkedin-logo icon"></i></div><a href="https://www.linkedin.com/in/yogesh-c-687559305/" target="_blank" rel="noopener noreferrer" style="color:rgba(74,144,217,0.8);text-decoration:none">linkedin.com/in/yogesh-c-687559305</a></div>
+        <div class="contact-row"><div class="contact-icon"><i class="ph ph-github-logo icon"></i></div><a href="https://github.com/yogegit-07" target="_blank" rel="noopener noreferrer" style="color:rgba(232,184,75,0.8);text-decoration:none">github.com/yogegit-07</a></div>
+        <div class="contact-row"><div class="contact-icon"><i class="ph ph-arrow-square-out icon"></i></div><a href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" style="color:rgba(93,202,165,0.8);text-decoration:none">portfolio-yogegit-07s-projects.vercel.app</a></div>
       </div>
     </div>
     <div class="skills-grid">
@@ -329,11 +329,11 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
 <div class="page-section reveal">
   <div class="sec-label">What I Do</div>
   <div class="spec-grid">
-    <div class="spec-card"><div class="spec-icon"><i data-lucide="code-2" class="icon-lg"></i></div><div class="spec-title">Python Backend</div><div class="spec-desc">Scalable REST APIs with Django &amp; Flask, clean architecture, data pipelines with Pandas &amp; NumPy, and unit-tested modules.</div></div>
-    <div class="spec-card"><div class="spec-icon"><i data-lucide="cloud" class="icon-lg"></i></div><div class="spec-title">AWS Cloud</div><div class="spec-desc">Deploying and managing applications on S3, EC2, IAM, VPC, and CloudWatch. AWS re/Start certified.</div></div>
-    <div class="spec-card"><div class="spec-icon"><i data-lucide="zap" class="icon-lg"></i></div><div class="spec-title">Full Stack Dev</div><div class="spec-desc">React.js + TypeScript frontends wired to PostgreSQL backends with Row Level Security and serverless edge functions.</div></div>
-    <div class="spec-card"><div class="spec-icon"><i data-lucide="bot" class="icon-lg"></i></div><div class="spec-title">AI Integration</div><div class="spec-desc">Integrating Google Gemini AI via serverless functions for conversational interfaces and context-aware recommendations.</div></div>
-    <div class="spec-card"><div class="spec-icon"><i data-lucide="briefcase-business" class="icon-lg"></i></div><div class="spec-title">Business Development</div><div class="spec-desc">Generating qualified leads, researching target accounts, managing CRM pipelines, and supporting client outreach with clear market insight.</div></div>
+    <div class="spec-card"><div class="spec-icon"><i class="ph ph-code icon-lg"></i></div><div class="spec-title">Python Backend</div><div class="spec-desc">Scalable REST APIs with Django &amp; Flask, clean architecture, data pipelines with Pandas &amp; NumPy, and unit-tested modules.</div></div>
+    <div class="spec-card"><div class="spec-icon"><i class="ph ph-cloud icon-lg"></i></div><div class="spec-title">AWS Cloud</div><div class="spec-desc">Deploying and managing applications on S3, EC2, IAM, VPC, and CloudWatch. AWS re/Start certified.</div></div>
+    <div class="spec-card"><div class="spec-icon"><i class="ph ph-lightning icon-lg"></i></div><div class="spec-title">Full Stack Dev</div><div class="spec-desc">React.js + TypeScript frontends wired to PostgreSQL backends with Row Level Security and serverless edge functions.</div></div>
+    <div class="spec-card"><div class="spec-icon"><i class="ph ph-robot icon-lg"></i></div><div class="spec-title">AI Integration</div><div class="spec-desc">Integrating Google Gemini AI via serverless functions for conversational interfaces and context-aware recommendations.</div></div>
+    <div class="spec-card"><div class="spec-icon"><i class="ph ph-briefcase icon-lg"></i></div><div class="spec-title">Business Development</div><div class="spec-desc">Generating qualified leads, researching target accounts, managing CRM pipelines, and supporting client outreach with clear market insight.</div></div>
   </div>
 </div>
 </div>
@@ -397,8 +397,8 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
       <span class="tech-badge">Vite</span>
     </div>
     <div class="project-links">
-      <a class="proj-link" href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link" class="icon"></i> Live Demo</a>
-      <a class="proj-link" href="https://github.com/yogegit-07/shop-ai" target="_blank" rel="noopener noreferrer"><i data-lucide="github" class="icon"></i> View on GitHub</a>
+      <a class="proj-link" href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer"><i class="ph ph-arrow-square-out icon"></i> Live Demo</a>
+      <a class="proj-link" href="https://github.com/yogegit-07/shop-ai" target="_blank" rel="noopener noreferrer"><i class="ph ph-github-logo icon"></i> View on GitHub</a>
     </div>
   </div>
 </div>
@@ -450,7 +450,7 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
     <h3>Download My Resume</h3>
     <p>Full CV — Python · Django · AWS · React.js · AI · Business Development</p>
   </div>
-  <button class="resume-dl-btn" onclick="handleDownloadResume()"><i data-lucide="download" class="icon"></i> Download Resume</button>
+  <button class="resume-dl-btn" onclick="handleDownloadResume()"><i class="ph ph-download-simple icon"></i> Download Resume</button>
 </div>
 </div>
 
@@ -465,23 +465,23 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
       <p class="contact-info-text">Open to full-time roles, internships, freelance projects, and business development opportunities. Whether it's a Python backend, an AWS deployment, a full-stack build, or a client-growth challenge — reach out and let's talk.</p>
       <div class="contact-links-list">
         <a class="contact-link-item" href="mailto:c.yogesh0007@gmail.com">
-          <div class="cli-icon"><i data-lucide="mail" class="icon"></i></div>
+          <div class="cli-icon"><i class="ph ph-envelope icon"></i></div>
           <div><div class="cli-label">Email</div><div class="cli-value">c.yogesh0007@gmail.com</div></div>
         </a>
         <a class="contact-link-item" href="https://www.linkedin.com/in/yogesh-c-687559305/" target="_blank" rel="noopener noreferrer">
-          <div class="cli-icon"><i data-lucide="linkedin" class="icon"></i></div>
+          <div class="cli-icon"><i class="ph ph-linkedin-logo icon"></i></div>
           <div><div class="cli-label">LinkedIn</div><div class="cli-value">linkedin.com/in/yogesh-c-687559305</div></div>
         </a>
         <a class="contact-link-item" href="https://github.com/yogegit-07" target="_blank" rel="noopener noreferrer">
-          <div class="cli-icon"><i data-lucide="github" class="icon"></i></div>
+          <div class="cli-icon"><i class="ph ph-github-logo icon"></i></div>
           <div><div class="cli-label">GitHub</div><div class="cli-value">github.com/yogegit-07</div></div>
         </a>
         <a class="contact-link-item" href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <div class="cli-icon"><i data-lucide="external-link" class="icon"></i></div>
+          <div class="cli-icon"><i class="ph ph-arrow-square-out icon"></i></div>
           <div><div class="cli-label">Portfolio</div><div class="cli-value">portfolio-yogegit-07s-projects.vercel.app</div></div>
         </a>
         <a class="contact-link-item" href="tel:+919345768245">
-          <div class="cli-icon"><i data-lucide="phone" class="icon"></i></div>
+          <div class="cli-icon"><i class="ph ph-phone icon"></i></div>
           <div><div class="cli-label">Phone</div><div class="cli-value">+91 93457 68245</div></div>
         </a>
       </div>
@@ -533,6 +533,12 @@ function handleDownloadResume() {
 }
 
 // ── CONTACT FORM ──
+function handleHireMe(event){
+  event.preventDefault();
+  window.location.href=event.currentTarget.href;
+  setTimeout(()=>document.getElementById('contact')?.scrollIntoView({behavior:'smooth'}),900);
+}
+
 function handleSubmit(){
   const n=document.getElementById('fname').value.trim();
   const e=document.getElementById('femail').value.trim();
@@ -564,15 +570,13 @@ document.querySelectorAll('.nav-link').forEach(a=>{
 
 // ── VISUAL SYSTEM ──
 (function(){
-  if(window.lucide)lucide.createIcons();
   const root=document.body;
   const toggle=document.getElementById('themeToggle');
   const savedTheme=localStorage.getItem('portfolio-theme');
   if(savedTheme==='light')root.classList.add('light-mode');
   function refreshThemeIcon(){
     if(!toggle)return;
-    toggle.innerHTML=`<i data-lucide="${root.classList.contains('light-mode')?'moon':'sun'}" class="icon"></i>`;
-    if(window.lucide)lucide.createIcons();
+    toggle.innerHTML=`<i class="ph ph-${root.classList.contains('light-mode')?'moon':'sun'} icon"></i>`;
   }
   refreshThemeIcon();
   toggle?.addEventListener('click',()=>{
@@ -581,6 +585,7 @@ document.querySelectorAll('.nav-link').forEach(a=>{
     refreshThemeIcon();
   });
   const revealItems=document.querySelectorAll('.reveal');
+  revealItems.forEach(item=>item.classList.add('is-visible'));
   if('IntersectionObserver' in window){
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
       if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}
