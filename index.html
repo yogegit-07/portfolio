@@ -7,18 +7,36 @@
 <meta name="description" content="Portfolio of Yogesh C, a Python developer and business development professional focused on backend systems, AWS cloud automation, and client growth.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --gold:#C9993A;--gold-glow:#E8B84B;--warm:#FF8C42;--blue-acc:#4A90D9;
   --dark:#050505;--glass:rgba(255,255,255,0.04);--glass-border:rgba(255,255,255,0.1);
   --text:#F0EDE8;--muted:rgba(240,237,232,0.5);--hint:rgba(240,237,232,0.25);
+  --accent:var(--gold-glow);--accent-soft:rgba(232,184,75,0.12);--surface:rgba(255,255,255,0.04);
 }
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
 
+body.light-mode{--dark:#f4f0e8;--glass:rgba(18,22,28,0.05);--glass-border:rgba(18,22,28,0.14);--text:#18202b;--muted:rgba(24,32,43,0.68);--hint:rgba(24,32,43,0.45);--surface:rgba(255,255,255,0.62)}
+body.light-mode #hero{background:#eee8dc}
+body.light-mode .overlay-gradient{background:linear-gradient(to right,rgba(244,240,232,0.95),rgba(244,240,232,0.62) 55%,rgba(244,240,232,0.18)),linear-gradient(to bottom,rgba(244,240,232,0.25),transparent 50%,rgba(244,240,232,0.9))}
+body.light-mode .hero-headline strong,body.light-mode .project-name,body.light-mode .about-headline,body.light-mode .contact-info-headline{color:#18202b}
+body.light-mode .form-wrap,body.light-mode .form-input{background:rgba(255,255,255,0.52)}
+
+button,.btn-primary,.btn-ghost,.resume-dl-btn,.form-submit,.proj-link{will-change:transform}
+.icon{width:16px;height:16px;stroke-width:1.8;flex:0 0 auto}
+.icon-lg{width:20px;height:20px;stroke-width:1.7}
+.nav-link:hover,.nav-github:hover,.tagline,.hero-name .last,.scroll-line,.sec-label,.project-number,.project-subtitle,.edu-year,.contact-icon,.cli-icon{color:var(--accent)}
+.contact-icon,.cli-icon{border-color:var(--accent-soft)}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:0.5px solid var(--glass-border);border-radius:50%;background:var(--glass);color:var(--accent);cursor:pointer;transition:transform .25s,background .25s,border-color .25s}
+.theme-toggle:hover{transform:rotate(12deg) scale(1.08);border-color:var(--accent);background:var(--accent-soft)}
+
 /* ── HERO ── */
 #hero{position:relative;width:100%;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#050505}
+#hero::after{content:'';position:absolute;inset:-25%;z-index:1;pointer-events:none;background:conic-gradient(from 120deg at 55% 45%,transparent 0deg,rgba(232,184,75,.08) 70deg,transparent 145deg,rgba(74,144,217,.08) 235deg,transparent 300deg);filter:blur(32px);animation:heroDrift 16s ease-in-out infinite alternate}
+@keyframes heroDrift{from{transform:translate3d(-3%,-2%,0) rotate(0deg) scale(1)}to{transform:translate3d(4%,3%,0) rotate(12deg) scale(1.08)}}
 #three-canvas{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0.7}
 .overlay-gradient{position:absolute;inset:0;z-index:4;pointer-events:none;
   background:linear-gradient(to right,rgba(5,5,5,0.94) 0%,rgba(5,5,5,0.58) 45%,rgba(5,5,5,0.18) 75%,rgba(5,5,5,0.5) 100%),
@@ -52,8 +70,8 @@ body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;o
 .stack-dot.blue{background:var(--blue-acc)}
 .stack-dot.green{background:#5DCAA5}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s ease 1.5s forwards}
-.btn-primary{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:12px 28px;background:var(--gold);color:#050505;border:none;border-radius:2px;cursor:pointer;transition:all 0.25s ease;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-.btn-primary:hover{background:var(--gold-glow);transform:translateY(-1px)}
+.btn-primary{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:14px 30px;background:var(--accent);color:#050505;border:none;border-radius:6px;cursor:pointer;transition:all .25s ease;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:700;box-shadow:0 10px 24px rgba(232,184,75,.2)}
+.btn-primary:hover{background:#f3c865;transform:translateY(-3px) scale(1.03);box-shadow:0 14px 30px rgba(232,184,75,.32)}
 .btn-ghost{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:12px 28px;background:transparent;color:var(--muted);border:0.5px solid var(--glass-border);border-radius:2px;cursor:pointer;transition:all 0.25s ease;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
@@ -64,7 +82,9 @@ body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;o
 @keyframes scrollPulse{0%,100%{opacity:0.3}50%{opacity:1}}
 
 /* ── LAYOUT ── */
-.page-section{padding:100px 6vw;max-width:1200px;margin:0 auto}
+.page-section{padding:112px 6vw;max-width:1200px;margin:0 auto}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.is-visible{opacity:1;transform:none}
 .divider{border:none;border-top:1px solid rgba(255,255,255,0.05);margin:0}
 .sec-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:3rem;display:flex;align-items:center;gap:16px}
 .sec-label::after{content:'';flex:0 0 60px;height:1px;background:var(--gold);opacity:0.4}
@@ -75,20 +95,21 @@ body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;o
 .about-text{font-size:14px;font-weight:300;line-height:1.9;color:var(--muted);margin-bottom:1.2rem}
 .about-contact{margin-top:2.5rem;display:flex;flex-direction:column;gap:10px}
 .contact-row{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted)}
-.contact-icon{width:30px;height:30px;border-radius:50%;border:0.5px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;color:var(--gold)}
+.contact-icon{width:30px;height:30px;border-radius:50%;border:0.5px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;color:var(--accent);background:var(--accent-soft)}
 .skills-grid{display:flex;flex-direction:column;gap:22px}
 .skill-group-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--hint);margin-bottom:10px}
 .skill-tags{display:flex;flex-wrap:wrap;gap:7px}
-.skill-tag{font-size:12px;padding:5px 12px;border:0.5px solid var(--glass-border);border-radius:2px;color:var(--muted);background:var(--glass)}
+.skill-tag{font-size:12px;padding:7px 12px;border:0.5px solid var(--glass-border);border-radius:999px;color:var(--muted);background:var(--surface);box-shadow:0 4px 14px rgba(0,0,0,.08);transition:transform .2s,border-color .2s,color .2s,background .2s}
+.skill-tag:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--text);background:var(--accent-soft)}
 .skill-tag.hi{border-color:rgba(201,153,58,0.4);color:rgba(232,184,75,0.85)}
 .skill-tag.blue{border-color:rgba(74,144,217,0.35);color:rgba(74,144,217,0.85)}
 .skill-tag.green{border-color:rgba(93,202,165,0.35);color:rgba(93,202,165,0.8)}
 
 /* ── SPECIALTIES ── */
 .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.spec-card{border:0.5px solid rgba(255,255,255,0.07);padding:28px 24px;border-radius:4px;background:var(--glass);transition:border-color 0.3s}
-.spec-card:hover{border-color:rgba(201,153,58,0.25)}
-.spec-icon{font-size:22px;margin-bottom:14px}
+.spec-card{border:0.5px solid rgba(255,255,255,0.07);padding:28px 24px;border-radius:10px;background:var(--glass);transition:border-color .3s,transform .3s,box-shadow .3s}
+.spec-card:hover{border-color:var(--accent);transform:translateY(-5px);box-shadow:0 16px 34px rgba(0,0,0,.18)}
+.spec-icon{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--accent-soft);border-radius:12px;color:var(--accent);background:var(--accent-soft);margin-bottom:14px}
 .spec-title{font-size:15px;font-weight:400;color:var(--text);margin-bottom:8px}
 .spec-desc{font-size:12px;font-weight:300;color:var(--muted);line-height:1.7}
 
@@ -103,13 +124,14 @@ body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;o
 .exp-bullets li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:1px;background:var(--gold)}
 
 /* ── PROJECTS ── */
-.project-card{border:0.5px solid rgba(255,255,255,0.07);background:linear-gradient(135deg,rgba(255,255,255,0.03) 0%,transparent 100%);border-radius:4px;padding:48px;margin-bottom:20px;transition:border-color 0.3s;position:relative;overflow:hidden}
-.project-card:hover{border-color:rgba(201,153,58,0.3)}
+.project-card{border:0.5px solid rgba(255,255,255,0.07);background:linear-gradient(135deg,rgba(255,255,255,0.06) 0%,transparent 100%);border-radius:12px;padding:48px;margin-bottom:20px;transition:border-color .3s,transform .3s,box-shadow .3s;position:relative;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.12)}
+.project-card:hover{border-color:var(--accent);transform:translateY(-6px);box-shadow:0 22px 54px rgba(0,0,0,.26),0 0 28px rgba(232,184,75,.08)}
 .project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.3s}
 .project-card:hover::before{opacity:1}
 .project-number{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;color:var(--gold);margin-bottom:1.2rem;opacity:0.7}
 .project-name{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,42px);font-weight:300;color:var(--text);margin-bottom:6px}
 .project-subtitle{font-size:13px;color:var(--gold);letter-spacing:0.05em;margin-bottom:1.4rem}
+.project-media-placeholder{height:190px;margin:0 0 28px;border:1px dashed rgba(232,184,75,.35);border-radius:9px;background:linear-gradient(135deg,rgba(232,184,75,.09),rgba(74,144,217,.06)),repeating-linear-gradient(135deg,transparent 0 12px,rgba(255,255,255,.025) 12px 13px);display:flex;align-items:center;justify-content:center;color:var(--hint);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
 .project-desc{font-size:14px;font-weight:300;color:var(--muted);line-height:1.85;margin-bottom:1.8rem;max-width:720px}
 .project-tech{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:1.5rem}
 .tech-badge{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;padding:4px 10px;border:0.5px solid rgba(201,153,58,0.25);border-radius:2px;color:rgba(232,184,75,0.6);background:rgba(201,153,58,0.04)}
@@ -133,8 +155,8 @@ body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;o
 .resume-banner{margin:0 6vw 60px;max-width:calc(1200px - 12vw);border:0.5px solid rgba(201,153,58,0.25);border-radius:4px;padding:28px 36px;background:rgba(201,153,58,0.04);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .resume-banner-text h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--text);margin-bottom:4px}
 .resume-banner-text p{font-size:13px;color:var(--muted);font-weight:300}
-.resume-dl-btn{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:12px 28px;background:var(--gold);color:#050505;border:none;border-radius:2px;cursor:pointer;transition:all 0.25s;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:8px}
-.resume-dl-btn:hover{background:var(--gold-glow);transform:translateY(-1px)}
+.resume-dl-btn{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:15px 30px;background:var(--accent);color:#050505;border:none;border-radius:6px;cursor:pointer;transition:all .25s;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;font-weight:700;box-shadow:0 10px 24px rgba(232,184,75,.2)}
+.resume-dl-btn:hover{background:#f3c865;transform:translateY(-3px) scale(1.03);box-shadow:0 14px 30px rgba(232,184,75,.32)}
 
 /* ── CONTACT ── */
 .contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start}
@@ -143,7 +165,7 @@ body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;o
 .contact-links-list{display:flex;flex-direction:column;gap:12px}
 .contact-link-item{display:flex;align-items:center;gap:14px;text-decoration:none;transition:opacity 0.2s}
 .contact-link-item:hover{opacity:0.8}
-.cli-icon{width:36px;height:36px;border-radius:50%;border:0.5px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--gold);flex-shrink:0;background:var(--glass)}
+.cli-icon{width:36px;height:36px;border-radius:50%;border:0.5px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--accent);flex-shrink:0;background:var(--accent-soft)}
 .cli-label{font-size:11px;font-family:'Space Mono',monospace;letter-spacing:0.1em;color:var(--hint);text-transform:uppercase;margin-bottom:2px}
 .cli-value{font-size:13px;color:var(--muted)}
 .form-wrap{background:rgba(255,255,255,0.025);border:0.5px solid rgba(255,255,255,0.08);border-radius:4px;padding:40px}
@@ -153,8 +175,8 @@ body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;o
 .form-input::placeholder{color:var(--hint)}
 .form-input:focus{border-color:var(--gold)}
 .form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.form-submit{width:100%;padding:14px;background:var(--gold);color:#050505;border:none;border-radius:2px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;cursor:pointer;transition:all 0.25s;margin-top:8px}
-.form-submit:hover{background:var(--gold-glow);transform:translateY(-1px)}
+.form-submit{width:100%;padding:14px;background:var(--accent);color:#050505;border:none;border-radius:6px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;cursor:pointer;transition:all .25s;margin-top:8px;font-weight:700}
+.form-submit:hover{background:#f3c865;transform:translateY(-2px);box-shadow:0 10px 24px rgba(232,184,75,.2)}
 .form-submit.sent{background:rgba(93,202,165,0.8);color:#050505}
 .form-note{font-size:11px;color:var(--hint);text-align:center;margin-top:12px;font-family:'Space Mono',monospace;letter-spacing:0.05em}
 
@@ -174,7 +196,11 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
   .nav-links{display:none}
   .form-grid-2{grid-template-columns:1fr}
   .resume-banner{flex-direction:column;align-items:flex-start}
+  .page-section{padding:78px 6vw}
+  .project-media-placeholder{height:140px}
+  .hero-cta .btn-ghost{padding:11px 16px}
 }
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -193,9 +219,10 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
       <a class="nav-link" href="#experience">Experience</a>
       <a class="nav-link" href="#projects">Projects</a>
       <a class="nav-link" href="#contact">Contact</a>
-      <a class="nav-github" href="https://github.com/yogegit-07" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+      <a class="nav-github" href="https://github.com/yogegit-07" target="_blank" rel="noopener noreferrer"><i data-lucide="github" class="icon"></i> GitHub</a>
       <a class="nav-link" href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer">Portfolio</a>
     </div>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme" title="Toggle color theme"><i data-lucide="sun" class="icon"></i></button>
   </nav>
 
   <div class="hero-content">
@@ -214,10 +241,10 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
       <div class="stack-item"><div class="stack-dot green"></div>AWS Cloud · React.js</div>
     </div>
     <div class="hero-cta">
-      <a class="btn-primary" href="mailto:c.yogesh0007@gmail.com">✉ Hire Me</a>
-      <a class="btn-ghost" href="https://github.com/yogegit-07" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
-      <a class="btn-ghost" href="https://www.linkedin.com/in/yogesh-c-687559305/" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
-      <a class="btn-ghost" href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer">↗ Portfolio</a>
+      <a class="btn-primary" href="mailto:c.yogesh0007@gmail.com"><i data-lucide="mail" class="icon"></i> Hire Me</a>
+      <a class="btn-ghost" href="https://github.com/yogegit-07" target="_blank" rel="noopener noreferrer"><i data-lucide="github" class="icon"></i> GitHub</a>
+      <a class="btn-ghost" href="https://www.linkedin.com/in/yogesh-c-687559305/" target="_blank" rel="noopener noreferrer"><i data-lucide="linkedin" class="icon"></i> LinkedIn</a>
+      <a class="btn-ghost" href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link" class="icon"></i> Portfolio</a>
     </div>
   </div>
 
@@ -230,7 +257,7 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
 <!-- ── ABOUT ── -->
 <hr class="divider">
 <div id="about">
-<div class="page-section">
+<div class="page-section reveal">
   <div class="sec-label">About</div>
   <div class="about-grid">
     <div>
@@ -239,12 +266,12 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
       <p class="about-text">With hands-on experience integrating Google Gemini AI, React.js frontends, and PostgreSQL backends, I bridge the gap between clean interfaces and robust server-side logic.</p>
       <p class="about-text">Alongside my technical work, I currently support business development at ChainSys through lead generation, market research, client outreach, and CRM management.</p>
       <div class="about-contact">
-        <div class="contact-row"><div class="contact-icon">✉</div>c.yogesh0007@gmail.com</div>
-        <div class="contact-row"><div class="contact-icon">☎</div>+91 93457 68245</div>
-        <div class="contact-row"><div class="contact-icon">⌖</div>Palamedu, Madurai, Tamil Nadu</div>
-        <div class="contact-row"><div class="contact-icon">in</div><a href="https://www.linkedin.com/in/yogesh-c-687559305/" target="_blank" rel="noopener noreferrer" style="color:rgba(74,144,217,0.8);text-decoration:none">linkedin.com/in/yogesh-c-687559305</a></div>
-        <div class="contact-row"><div class="contact-icon">⌥</div><a href="https://github.com/yogegit-07" target="_blank" rel="noopener noreferrer" style="color:rgba(232,184,75,0.8);text-decoration:none">github.com/yogegit-07</a></div>
-        <div class="contact-row"><div class="contact-icon">↗</div><a href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" style="color:rgba(93,202,165,0.8);text-decoration:none">portfolio-yogegit-07s-projects.vercel.app</a></div>
+        <div class="contact-row"><div class="contact-icon"><i data-lucide="mail" class="icon"></i></div>c.yogesh0007@gmail.com</div>
+        <div class="contact-row"><div class="contact-icon"><i data-lucide="phone" class="icon"></i></div>+91 93457 68245</div>
+        <div class="contact-row"><div class="contact-icon"><i data-lucide="map-pin" class="icon"></i></div>Palamedu, Madurai, Tamil Nadu</div>
+        <div class="contact-row"><div class="contact-icon"><i data-lucide="linkedin" class="icon"></i></div><a href="https://www.linkedin.com/in/yogesh-c-687559305/" target="_blank" rel="noopener noreferrer" style="color:rgba(74,144,217,0.8);text-decoration:none">linkedin.com/in/yogesh-c-687559305</a></div>
+        <div class="contact-row"><div class="contact-icon"><i data-lucide="github" class="icon"></i></div><a href="https://github.com/yogegit-07" target="_blank" rel="noopener noreferrer" style="color:rgba(232,184,75,0.8);text-decoration:none">github.com/yogegit-07</a></div>
+        <div class="contact-row"><div class="contact-icon"><i data-lucide="external-link" class="icon"></i></div><a href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" style="color:rgba(93,202,165,0.8);text-decoration:none">portfolio-yogegit-07s-projects.vercel.app</a></div>
       </div>
     </div>
     <div class="skills-grid">
@@ -299,14 +326,14 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
 <!-- ── SPECIALTIES ── -->
 <hr class="divider">
 <div id="specialise">
-<div class="page-section">
+<div class="page-section reveal">
   <div class="sec-label">What I Do</div>
   <div class="spec-grid">
-    <div class="spec-card"><div class="spec-icon">🐍</div><div class="spec-title">Python Backend</div><div class="spec-desc">Scalable REST APIs with Django &amp; Flask, clean architecture, data pipelines with Pandas &amp; NumPy, and unit-tested modules.</div></div>
-    <div class="spec-card"><div class="spec-icon">☁</div><div class="spec-title">AWS Cloud</div><div class="spec-desc">Deploying and managing applications on S3, EC2, IAM, VPC, and CloudWatch. AWS re/Start certified.</div></div>
-    <div class="spec-card"><div class="spec-icon">⚡</div><div class="spec-title">Full Stack Dev</div><div class="spec-desc">React.js + TypeScript frontends wired to PostgreSQL backends with Row Level Security and serverless edge functions.</div></div>
-    <div class="spec-card"><div class="spec-icon">🤖</div><div class="spec-title">AI Integration</div><div class="spec-desc">Integrating Google Gemini AI via serverless functions for conversational interfaces and context-aware recommendations.</div></div>
-    <div class="spec-card"><div class="spec-icon">◌</div><div class="spec-title">Business Development</div><div class="spec-desc">Generating qualified leads, researching target accounts, managing CRM pipelines, and supporting client outreach with clear market insight.</div></div>
+    <div class="spec-card"><div class="spec-icon"><i data-lucide="code-2" class="icon-lg"></i></div><div class="spec-title">Python Backend</div><div class="spec-desc">Scalable REST APIs with Django &amp; Flask, clean architecture, data pipelines with Pandas &amp; NumPy, and unit-tested modules.</div></div>
+    <div class="spec-card"><div class="spec-icon"><i data-lucide="cloud" class="icon-lg"></i></div><div class="spec-title">AWS Cloud</div><div class="spec-desc">Deploying and managing applications on S3, EC2, IAM, VPC, and CloudWatch. AWS re/Start certified.</div></div>
+    <div class="spec-card"><div class="spec-icon"><i data-lucide="zap" class="icon-lg"></i></div><div class="spec-title">Full Stack Dev</div><div class="spec-desc">React.js + TypeScript frontends wired to PostgreSQL backends with Row Level Security and serverless edge functions.</div></div>
+    <div class="spec-card"><div class="spec-icon"><i data-lucide="bot" class="icon-lg"></i></div><div class="spec-title">AI Integration</div><div class="spec-desc">Integrating Google Gemini AI via serverless functions for conversational interfaces and context-aware recommendations.</div></div>
+    <div class="spec-card"><div class="spec-icon"><i data-lucide="briefcase-business" class="icon-lg"></i></div><div class="spec-title">Business Development</div><div class="spec-desc">Generating qualified leads, researching target accounts, managing CRM pipelines, and supporting client outreach with clear market insight.</div></div>
   </div>
 </div>
 </div>
@@ -314,7 +341,7 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
 <!-- ── EXPERIENCE ── -->
 <hr class="divider">
 <div id="experience">
-<div class="page-section">
+<div class="page-section reveal">
   <div class="sec-label">Experience</div>
   <div class="exp-item">
     <div>
@@ -353,12 +380,13 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
 <!-- ── PROJECTS ── -->
 <hr class="divider">
 <div id="projects">
-<div class="page-section">
+<div class="page-section reveal">
   <div class="sec-label">Projects</div>
   <div class="project-card">
     <div class="project-number">01 — Featured Project</div>
     <div class="project-name">ShopAI</div>
     <div class="project-subtitle">AI-Powered Smart Shopping Assistant</div>
+    <div class="project-media-placeholder" aria-label="Project media placeholder"></div>
     <p class="project-desc">Full-stack React/TypeScript web application with a conversational AI interface supporting natural language product queries (e.g. "Find Nike shoes under ₹5000"). Integrated Google Gemini AI via serverless edge functions for personalised, context-aware recommendations. Voice search via Web Speech Recognition API enables hands-free product discovery. Complete order lifecycle: UPI/Card/COD payments, real-time tracking timeline, wishlist management and order cancellation. Cloud-based PostgreSQL backend with Row Level Security and local storage fallback for offline resilience.</p>
     <div class="project-tech">
       <span class="tech-badge">React.js</span><span class="tech-badge">TypeScript</span>
@@ -369,8 +397,8 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
       <span class="tech-badge">Vite</span>
     </div>
     <div class="project-links">
-      <a class="proj-link" href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer">↗ Live Demo</a>
-      <a class="proj-link" href="https://github.com/yogegit-07/shop-ai" target="_blank" rel="noopener noreferrer">⌥ View on GitHub ↗</a>
+      <a class="proj-link" href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link" class="icon"></i> Live Demo</a>
+      <a class="proj-link" href="https://github.com/yogegit-07/shop-ai" target="_blank" rel="noopener noreferrer"><i data-lucide="github" class="icon"></i> View on GitHub</a>
     </div>
   </div>
 </div>
@@ -378,7 +406,7 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
 
 <!-- ── EDUCATION & CERTS ── -->
 <hr class="divider">
-<div class="page-section">
+<div class="page-section reveal">
   <div class="sec-label">Education</div>
   <div class="edu-grid" style="margin-bottom:60px">
     <div class="edu-card">
@@ -422,14 +450,14 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
     <h3>Download My Resume</h3>
     <p>Full CV — Python · Django · AWS · React.js · AI · Business Development</p>
   </div>
-  <button class="resume-dl-btn" onclick="handleDownloadResume()">⬇ Download Resume</button>
+  <button class="resume-dl-btn" onclick="handleDownloadResume()"><i data-lucide="download" class="icon"></i> Download Resume</button>
 </div>
 </div>
 
 <!-- ── CONTACT ── -->
 <hr class="divider" style="margin-top:60px">
 <div id="contact">
-<div class="page-section">
+<div class="page-section reveal">
   <div class="sec-label">Contact</div>
   <div class="contact-grid">
     <div>
@@ -437,23 +465,23 @@ footer{padding:60px 6vw;border-top:1px solid rgba(255,255,255,0.05);display:flex
       <p class="contact-info-text">Open to full-time roles, internships, freelance projects, and business development opportunities. Whether it's a Python backend, an AWS deployment, a full-stack build, or a client-growth challenge — reach out and let's talk.</p>
       <div class="contact-links-list">
         <a class="contact-link-item" href="mailto:c.yogesh0007@gmail.com">
-          <div class="cli-icon">✉</div>
+          <div class="cli-icon"><i data-lucide="mail" class="icon"></i></div>
           <div><div class="cli-label">Email</div><div class="cli-value">c.yogesh0007@gmail.com</div></div>
         </a>
         <a class="contact-link-item" href="https://www.linkedin.com/in/yogesh-c-687559305/" target="_blank" rel="noopener noreferrer">
-          <div class="cli-icon">in</div>
+          <div class="cli-icon"><i data-lucide="linkedin" class="icon"></i></div>
           <div><div class="cli-label">LinkedIn</div><div class="cli-value">linkedin.com/in/yogesh-c-687559305</div></div>
         </a>
         <a class="contact-link-item" href="https://github.com/yogegit-07" target="_blank" rel="noopener noreferrer">
-          <div class="cli-icon">⌥</div>
+          <div class="cli-icon"><i data-lucide="github" class="icon"></i></div>
           <div><div class="cli-label">GitHub</div><div class="cli-value">github.com/yogegit-07</div></div>
         </a>
         <a class="contact-link-item" href="https://portfolio-yogegit-07s-projects.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <div class="cli-icon">↗</div>
+          <div class="cli-icon"><i data-lucide="external-link" class="icon"></i></div>
           <div><div class="cli-label">Portfolio</div><div class="cli-value">portfolio-yogegit-07s-projects.vercel.app</div></div>
         </a>
         <a class="contact-link-item" href="tel:+919345768245">
-          <div class="cli-icon">☎</div>
+          <div class="cli-icon"><i data-lucide="phone" class="icon"></i></div>
           <div><div class="cli-label">Phone</div><div class="cli-value">+91 93457 68245</div></div>
         </a>
       </div>
@@ -527,11 +555,39 @@ function handleSubmit(){
 // ── SMOOTH NAV ──
 document.querySelectorAll('.nav-link').forEach(a=>{
   a.addEventListener('click',e=>{
+    if(!a.getAttribute('href').startsWith('#'))return;
     e.preventDefault();
     const id=a.getAttribute('href').slice(1);
     document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
   });
 });
+
+// ── VISUAL SYSTEM ──
+(function(){
+  if(window.lucide)lucide.createIcons();
+  const root=document.body;
+  const toggle=document.getElementById('themeToggle');
+  const savedTheme=localStorage.getItem('portfolio-theme');
+  if(savedTheme==='light')root.classList.add('light-mode');
+  function refreshThemeIcon(){
+    if(!toggle)return;
+    toggle.innerHTML=`<i data-lucide="${root.classList.contains('light-mode')?'moon':'sun'}" class="icon"></i>`;
+    if(window.lucide)lucide.createIcons();
+  }
+  refreshThemeIcon();
+  toggle?.addEventListener('click',()=>{
+    root.classList.toggle('light-mode');
+    localStorage.setItem('portfolio-theme',root.classList.contains('light-mode')?'light':'dark');
+    refreshThemeIcon();
+  });
+  const revealItems=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}
+    }),{threshold:.12,rootMargin:'0px 0px -40px'});
+    revealItems.forEach(item=>observer.observe(item));
+  }else revealItems.forEach(item=>item.classList.add('is-visible'));
+})();
 
 // ── THREE.JS PARTICLE FIELD ──
 (function(){
